@@ -1,0 +1,43 @@
+// media screen sizes
+$small-screen-max-width: 599.98px;
+$medium-screen-max-width: 991.98px;
+
+
+$medium-screen-min-width: 600px;
+$large-screen-min-width: 992px;
+
+// color
+$gray_25: var(--gray_25);
+$gray_50: var(--gray_50);
+$gray_300: var(--gray_300);
+$gray_600: var(--gray_600);
+$gray_700: var(--grey_700);
+$gray_950: var(--gray_950);
+$primary_200: var(--primary_200);
+$primary_600: var(--primary_600);
+$primary_900: var(--primary_900);
+$neutral_100: var(--neutral_100);
+$neutral_200: var(--neutral_200);
+$neutral_600: var(--neutral_600);
+$neutral_800: var(--neutral_800);
+$base_white: var(--base_white);
+
+// fonts
+$inter: 'Inter';
+//default duration
+$duration: 500ms;
+//override bootstrap variables
+$grid-gutter-width: 4rem;
+$container-padding-sm: 1.6rem;
+$container-padding-md: 3.2rem;
+$container-padding-lg: 11.2rem;
+$container-max-widths: (
+    'md': 100%,
+    'lg': 144rem,
+);
+$grid-breakpoints: (
+    'xs': 0,
+    'md': $medium-screen-min-width,
+    'lg': $large-screen-min-width,
+);
+

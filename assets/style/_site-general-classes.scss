@@ -1,0 +1,205 @@
+@import "variables";
+@import "mixins";
+@import "root";
+@import "fonts";
+// region container
+body {
+  h1, h2, h3, h4, h5, h6, p, ul, ol, form, fieldset {
+    margin: 0;
+    padding: 0;
+  }
+  
+  a, a:hover, a:focus {
+    text-decoration: none;
+  }
+  
+  label {
+    display: block;
+    margin: 0;
+  }
+  
+  
+  .container {
+    width: 100%;
+    max-width: 144rem;
+    margin: 0 auto;
+    @include paddingX($container-padding-sm);
+    @include min-medium-screen {
+      @include paddingX($container-padding-md);
+    }
+    @include large-screen {
+      @include paddingX($container-padding-lg);
+    }
+    @at-root body .section-noContainer & {
+      @include paddingX(0);
+    }
+  }
+}
+
+
+//endregion
+//region HTML tags
+*, :before, :after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-size: 10px;
+  width: 100vw;
+  overflow-x: hidden;
+  //region customize html scroll bar firefox
+  scrollbar-color: rgb(90, 90, 90) rgba(0, 0, 0, 0.2);
+  scrollbar-width: thin;
+  //endregion customize html scroll bar firefox
+  @include large-screen {
+    width: calc(100vw - 4px);
+  }
+  
+  &.modal-opened {
+    overflow: hidden;
+  }
+}
+
+@supports (-moz-appearance:none) {
+  @include large-screen {
+    html {
+      width: calc(100vw - 8px);
+    }
+  }
+}
+
+//region customize html scroll bar
+::-webkit-scrollbar {
+  width: 4px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  //background: rgba(0, 0, 0, 0.5); /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(90, 90, 90);
+  //background-color: red; /* color of the scroll thumb */
+}
+
+.hide-scrollbar {
+  scrollbar-width: none !important; // Hide Scrollbar FireFox
+  &::-webkit-scrollbar { // Hide Scrollbar Chrome
+    display: none;
+  }
+}
+
+//endregion customize html scroll bar
+
+
+// region hyperlink style
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color $duration;
+}
+
+// endregion hyperlink style
+
+img, picture {
+  display: block;
+}
+
+button {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, form, fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+
+input, textarea {
+  &::placeholder {
+    transition: opacity $duration;
+    font: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+  
+  &:focus {
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+
+//endregion HTML tags
+
+
+//region utility classes
+.aspect-ratio {
+  position: relative;
+  height: 0;
+  
+  img, video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.hide {
+  &-only-sm {
+    @include small-screen {
+      display: none !important;
+    }
+  }
+  
+  &-only-md {
+    @include medium-screen {
+      display: none !important;
+    }
+  }
+  
+  &-only-lg {
+    @include large-screen {
+      display: none !important;
+    }
+  }
+  
+  &-between-sm-md {
+    @include max-medium-screen {
+      display: none !important;
+    }
+  }
+  
+  &-between-md-lg {
+    @include min-medium-screen {
+      display: none !important;
+    }
+  }
+}
+
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.display-block {
+  display: block;
+}
+
+//endregion utility classes
+
+
