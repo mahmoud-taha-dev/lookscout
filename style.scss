@@ -16,6 +16,14 @@ header {
     justify-content: space-between;
     align-items: center;
     
+    .header-links {
+      display: none;
+    }
+    
+    .signup-login {
+      display: none;
+    }
+    
     .header-logo {
       width: size(128);
       
