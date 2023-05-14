@@ -9,6 +9,10 @@ body {
     padding: 0;
   }
   
+  html, body {
+    width: 100%;
+  }
+  
   a, a:hover, a:focus {
     text-decoration: none;
   }
@@ -23,6 +27,7 @@ body {
     width: 100%;
     max-width: 144rem;
     margin: 0 auto;
+    overflow: hidden;
     @include paddingX($container-padding-sm);
     @include min-medium-screen {
       @include paddingX($container-padding-md);
